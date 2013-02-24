@@ -32,7 +32,10 @@ while True:
         
         users.add(raw[1])
         
-        urlopen("%s/join/" % URL_PREFIX, data=urlencode(info)).close()
+        try:
+            urlopen("%s/join/" % URL_PREFIX, data=urlencode(info)).close()
+        except:
+            pass
         time.sleep(0.5)
         continue
         
@@ -44,7 +47,10 @@ while True:
         
         users.add(raw[1])
                 
-        urlopen("%s/leave/" % URL_PREFIX, data=urlencode(info)).close()
+        try:
+            urlopen("%s/leave/" % URL_PREFIX, data=urlencode(info)).close()
+        except:
+            pass
         time.sleep(0.5)
         continue
     
@@ -56,7 +62,10 @@ while True:
             info = {'username': raw[1], 
                 'datetime': raw[0],
                 'reason': raw[2]}      
-            urlopen("%s/died/" % URL_PREFIX, data=urlencode(info)).close()
+            try:                
+                urlopen("%s/died/" % URL_PREFIX, data=urlencode(info)).close()
+            except:
+                pass
             time.sleep(0.5)
 
         continue

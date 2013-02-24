@@ -39,7 +39,11 @@ def join(request, server_key):
         except  Login.DoesNotExist:
             login = Login.objects.create(server=server, user=user)
             
-        access = Access.objects.create(login=login, start_time=datetime_actual)
+        # does an access for this time already exist?
+        try:
+            access = login.access_set.get(start_time=datetime_actual)
+        except Access.DoesNotExist:            
+            access = Access.objects.create(login=login, start_time=datetime_actual)
         
     return HttpResponse("OK")
     
