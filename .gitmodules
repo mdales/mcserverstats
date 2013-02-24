@@ -1,3 +1,0 @@
-[submodule "django-minecraft-auth"]
-	path = django_minecraft_auth
-	url = git://github.com/zandeez/django-minecraft-auth.git
