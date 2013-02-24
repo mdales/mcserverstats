@@ -1,0 +1,40 @@
+body {
+	color: white;
+	background: #8DBDE9;
+}
+
+h1 {
+	font-size: 24pt;
+}
+
+h2 {
+	font-size: 16pt;
+}
+
+div.server {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	background: white;
+	color: black;
+
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    padding-top: 10px;
+}
+
+ul.char { list-style-type: none; overflow: hidden; }
+ul.char li { float:left; width: 100px; }
+
+table.character {
+	width: 150px;
+}
+
+table.character td {
+	align: center;
+}
+
+div.character {
+	width: 100px;
+	height: 100px;
+}

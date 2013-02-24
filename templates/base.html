@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{% block pagetitle %}{% endblock %}</title>
+		
+    	<link href="{{ STATIC_URL }}/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    	<link href="{{ STATIC_URL }}/css/mcbook.css" rel="stylesheet" media="screen">
+		
+		<style type="text/css" media="screen">
+			canvas {
+			    image-rendering: optimizeSpeed;             // Older versions of FF
+			    image-rendering: -moz-crisp-edges;          // FF 6.0+
+			    image-rendering: -webkit-optimize-contrast; // Webkit
+			                                                //  (Safari now, Chrome soon)
+			    image-rendering: optimize-contrast;         // Possible future browsers.	
+			    -ms-interpolation-mode: nearest-neighbor;   // IE
+			}
+		</style>
+
+
+    	<script src="{{ STATIC_URL }}/bootstrap/js/bootstrap.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="{{ STATIC_URL }}/js/mcSkinRenderer.js" type="text/javascript" charset="utf-8"></script>		
+		
+		{% block script %}
+		{% endblock %}
+		
+	</head>
+	<body>
+		<h1>{% block title %}{% endblock %}</h1>
+		{% block content %}
+		{% endblock %}
+	</body>
+</html>

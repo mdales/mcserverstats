@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block pagetitle %}MC Server Stats{% endblock %}
+{% block title %}Welcome{% endblock %}
+
+{% block script %}
+	<script>
+		$(document).ready(function()
+			{
+				$("img.skin").ready(function()
+					{
+						renderMCSkins('skin', 3);
+					}
+				);
+			}
+		);
+	</script>
+{% endblock %}
+
+{% block content %}
+
+	{% for login in logins %}
+		<div class="server">
+	
+			<h2>{{ login.server.name }}</h2>
+		
+			<ul class="char">
+				{% for otherlogin in login.server.get_ordered_users %}
+					<li>
+						<table class="character">
+							<tr><td>
+								<div class="character">
+			                		<img class="skin" src="http://www.minecraft.net/skin/{{ otherlogin.user.username }}.png"/>
+								</div>
+							</td></tr>
+							<tr><td>
+								{{ otherlogin.user.username }}
+							</td></tr>
+							<tr><td>
+								{% if otherlogin.is_online %}<b>online!</b>{% endif %}
+							</td></tr>
+						</table>
+					</li>
+				{% endfor %}
+			</table>
+			
+		</div>
+		
+	{% endfor %}
+
+{% endblock %}
