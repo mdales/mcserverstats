@@ -33,6 +33,7 @@ while True:
         users.add(raw[1])
         
         urlopen("%s/join/" % URL_PREFIX, data=urlencode(info)).close()
+        time.sleep(0.5)
         continue
         
     match = leave_re.match(entry)
@@ -44,6 +45,7 @@ while True:
         users.add(raw[1])
                 
         urlopen("%s/leave/" % URL_PREFIX, data=urlencode(info)).close()
+        time.sleep(0.5)
         continue
     
     match = death_re.match(entry)
@@ -55,5 +57,6 @@ while True:
                 'datetime': raw[0],
                 'reason': raw[2]}      
             urlopen("%s/died/" % URL_PREFIX, data=urlencode(info)).close()
+            time.sleep(0.5)
 
         continue
