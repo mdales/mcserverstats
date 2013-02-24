@@ -10,7 +10,7 @@ LOG_FILE = sys.argv[2]
 
 logfile = open(LOG_FILE, "r")
 
-join_re = re.compile('^([0-9\ :\-]+) \[INFO\] ([\w_]+)\[.* logged in.*$')
+join_re = re.compile('^([0-9\ :\-]+) \[INFO\] ([\w_]+) {0,1}\[.* logged in.*$')
 leave_re = re.compile('^([0-9\ :\-]+) \[INFO\] ([\w_]+) lost connection.*$')
 death_re = re.compile('^([0-9\ :\-]+) \[INFO\] ([\w_]+) ([\w ]+)$')
 
