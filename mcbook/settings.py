@@ -69,7 +69,7 @@ STATIC_ROOT = ''
 STATIC_URL = '/static/'
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-STATIC_ROOT= os.path.join(PROJECT_DIR,'static/')
+STATIC_ROOT= os.path.join(PROJECT_ROOT,'static/')
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT,'static/'),
 )
@@ -113,7 +113,7 @@ ROOT_URLCONF = 'mcbook.urls'
 WSGI_APPLICATION = 'mcbook.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_DIR, "templates"),
+    os.path.join(PROJECT_ROOT, "templates"),
     # here you can add another templates directory if you wish.
 )
 
