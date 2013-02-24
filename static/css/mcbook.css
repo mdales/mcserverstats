@@ -35,6 +35,15 @@ div.server {
     padding: 10px 10px 10px 10px;
 }
 
+div.character canvas {
+	width: 48px;
+	height: 96px;
+}
+
+div.faded {
+	opacity: 0.5;
+}
+
 ul.char { list-style-type: none; overflow: hidden; }
 ul.char li { float:left; width: 100px; }
 
