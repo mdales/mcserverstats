@@ -11,6 +11,7 @@ class Server(models.Model):
     name = models.CharField(max_length=255)
     game_type = models.CharField(max_length=32, choices=(("VANILLA", "Vanilla"), ("TEKKIT", "Tekkit")))
     key = models.CharField(max_length=32, default=random_key)
+    public_api_key = models.CharField(max_length=32, default=random_key)
     
     list_display = ('name', 'game_type')
     

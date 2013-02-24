@@ -129,7 +129,7 @@ def died(request, server_key):
     
 def online(request, server_key):    
     try:
-        server = Server.objects.get(key=server_key)
+        server = Server.objects.get(public_api_key=server_key)
     except Server.DoesNotExist:
         raise Http404
         
