@@ -7,11 +7,11 @@
 
 	<div class="server">
 
-		<h2>{{ server.name }}</h2>
+		<h2>{{ server.game_type.lower }}: {{ server.name }}</h2>
 	
 		<p>Get a count of how many people are online on this server:</p>
 	
-		<p><span class="apicall">http://{{ host }}/api/{{ server.public_api_key }}/online/</p>
+		<p><span class="apicall">http://{{ host }}/api/{{ server.public_api_key }}/online/</span></p>
 		
 	</div>
 		
