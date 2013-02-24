@@ -19,7 +19,7 @@ def my_login(request):
         password = request.POST['password']
         
         user = authenticate(username=username, password=password)
-        print user
+
         if user is not None:
             if user.is_active:
                 login(request, user)
@@ -33,7 +33,29 @@ def home(request):
     
     user = request.user
     login_list = user.login_set.all().order_by('server__name')
-    print login_list
+
     return render_to_response('home.html', 
         {'logins': login_list},
         context_instance=RequestContext(request))
+        
+        
+@login_required
+def server_api(request, server_id):
+
+    print dir(request)
+
+    # check that the user has as login here
+    try:
+        server = Server.objects.get(id=server_id)
+    except Server.DoesNotExist:
+        raise Http404
+        
+    try:
+        login = server.login_set.get(user=request.user)
+    except Login.DoesNotExist:
+        raise Http404
+        
+    return render_to_response("server_api.html", 
+        {'server': server, 'host': request.get_host()},
+        context_instance=RequestContext(request))
+    

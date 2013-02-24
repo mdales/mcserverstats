@@ -1,6 +1,7 @@
 body {
 	color: white;
 	background: #8DBDE9;
+	padding: 10px;
 }
 
 h1 {
@@ -9,6 +10,16 @@ h1 {
 
 h2 {
 	font-size: 16pt;
+}
+
+span.servername {
+	font-size: 16pt;
+	font-weight: bold;
+}
+
+span.apicall {
+	color: #888;
+	font-family: Courier;
 }
 
 div.server {
@@ -20,7 +31,7 @@ div.server {
 
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
-    padding-top: 10px;
+    padding: 10px 10px 10px 10px;
 }
 
 ul.char { list-style-type: none; overflow: hidden; }

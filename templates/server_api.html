@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block pagetitle %}MC Server Stats{% endblock %}
+{% block title %}Server API for {{ server.name }}{% endblock %}
+
+{% block content %}
+
+	<div class="server">
+
+		<h2>{{ server.name }}</h2>
+	
+		<p>Get a count of how many people are online on this server:</p>
+	
+		<p><span class="apicall">http://{{ host }}/api/{{ server.public_api_key }}/online/</p>
+		
+	</div>
+		
+{% endblock %}
