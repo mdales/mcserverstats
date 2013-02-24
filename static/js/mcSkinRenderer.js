@@ -103,6 +103,9 @@
 		//draw the right arm
 		context.drawImage(skinImage, 44, 20, 4, 12, 12*s, 8*s,  4*s, 12*s);
 
+		// draw helmet
+		context.drawImage(skinImage, 40, 8, 8, 8, 4*s,  0*s,  8*s, 8*s);
+
 		//we replace the image with the canvas
 		skinImage.parentNode.replaceChild(canvas, skinImage);
 	}
