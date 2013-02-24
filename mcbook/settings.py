@@ -68,10 +68,9 @@ STATIC_ROOT = ''
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-STATIC_ROOT= os.path.join(PROJECT_ROOT,'static/')
+PROJECT_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..")
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT,'static/'),
+    os.path.join(PROJECT_ROOT,'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -116,6 +115,9 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, "templates"),
     # here you can add another templates directory if you wish.
 )
+
+
+print TEMPLATE_DIRS
 
 INSTALLED_APPS = (
     'django.contrib.auth',
