@@ -10,6 +10,10 @@ from servers.models import Server, Login, Access, Death
 
 def my_login(request):
     
+    if request.user and request.user.is_authenticated():
+        return HttpResponseRedirect('/home/')
+        
+    
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
