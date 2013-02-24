@@ -34,7 +34,8 @@ while True:
         
         try:
             urlopen("%s/join/" % URL_PREFIX, data=urlencode(info)).close()
-        except:
+        except e:
+            print e
             pass
         time.sleep(0.5)
         continue
@@ -49,7 +50,8 @@ while True:
                 
         try:
             urlopen("%s/leave/" % URL_PREFIX, data=urlencode(info)).close()
-        except:
+        except e:
+            print e
             pass
         time.sleep(0.5)
         continue
@@ -64,7 +66,8 @@ while True:
                 'reason': raw[2]}      
             try:                
                 urlopen("%s/died/" % URL_PREFIX, data=urlencode(info)).close()
-            except:
+            except e:
+                print e
                 pass
             time.sleep(0.5)
 
