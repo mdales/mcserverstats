@@ -125,3 +125,21 @@ def died(request, server_key):
         death = Death.objects.create(login=login, time=datetime_actual, reason=reason)
             
     return HttpResponse("OK")   
+    
+    
+def online(request, server_key):    
+    try:
+        server = Server.objects.get(key=server_key)
+    except Server.DoesNotExist:
+        raise Http404
+        
+    online_count = 0
+    
+    for login in server.login_set.all():
+        if login.is_online():
+            online_count += 1
+        
+    return HttpResponse("%s" % online_count)
+    
+    
+    

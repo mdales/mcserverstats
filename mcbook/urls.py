@@ -15,4 +15,6 @@ urlpatterns += patterns('servers.api',
     url(r'api/([\w]{32})/join/',    'join'),
     url(r'api/([\w]{32})/leave/',   'leave'),
     url(r'api/([\w]{32})/died/',    'died'),
+    
+    url(r'api/([\w]{32})/online/',   'online'),
 )
