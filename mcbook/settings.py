@@ -1,4 +1,6 @@
 # Django settings for mcbook project.
+import os
+
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
