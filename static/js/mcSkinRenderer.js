@@ -101,7 +101,7 @@
 		//draw the left arm
 		context.drawImage(skinImage, 44, 20, 4, 12, 0*s,  8*s,  4*s, 12*s);
 		//draw the right arm
-		context.drawImage(skinImage, 52, 20, 4, 12, 12*s, 8*s,  4*s, 12*s);
+		context.drawImage(skinImage, 44, 20, 4, 12, 12*s, 8*s,  4*s, 12*s);
 
 		//we replace the image with the canvas
 		skinImage.parentNode.replaceChild(canvas, skinImage);
