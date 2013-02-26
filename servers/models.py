@@ -1,3 +1,4 @@
+import ago
 import datetime
 import os
 
@@ -19,10 +20,7 @@ class Server(models.Model):
         return self.name
         
     def get_ordered_users(self):
-        x = self.login_set.all().order_by('user__username')
-        print x
-        return x
-        
+        return self.login_set.all().order_by('user__username')        
 
 class Login(models.Model):
     user = models.ForeignKey(User)
@@ -37,6 +35,13 @@ class Login(models.Model):
         most_recent = self.access_set.all().order_by('-start_time')[0]        
         return most_recent.end_time == None
         
+    def ago(self):
+        if self.access_set.all().count() == 0:
+            return "Never seen"
+        most_recent = self.access_set.all().order_by('-start_time')[0]        
+        end = most_recent.end_time
+        end = end.replace(tzinfo=None)
+        return ago.human(end, 1)
 
 class Access(models.Model):
     login = models.ForeignKey(Login)

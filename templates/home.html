@@ -46,7 +46,7 @@
 								{{ otherlogin.user.username }}
 							</td></tr>
 							<tr><td>
-								{% if otherlogin.is_online %}<b>online!</b>{% endif %}
+								{% if otherlogin.is_online %}<b>online!</b>{% else %}{{ otherlogin.ago }}{% endif %}
 							</td></tr>
 						</table>
 					</li>
